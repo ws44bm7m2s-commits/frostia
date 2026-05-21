@@ -8,6 +8,8 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import PricingSection      from "@/components/sections/PricingSection";
 import CTASection          from "@/components/sections/CTASection";
+import ContactSection from "@/components/sections/ContactSection";
+
 
 /* ─────────────────────────────────────────────────────────────────
    SEO — sobreescribe el title del layout
@@ -54,6 +56,9 @@ export default function HomePage() {
 
       {/* 9 — Conversión final: agenda una reunión */}
       <CTASection />
+
+      {/* 10 — Formulario agenda una reunion */}
+      <ContactSection />
 
     </main>
   );

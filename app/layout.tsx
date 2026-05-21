@@ -5,9 +5,7 @@ import Navbar           from "@/components/layout/Navbar";
 import Footer           from "@/components/layout/Footer";
 import ScrollToTop      from "@/components/layout/ScrollToTop";
 import ScrollProgressBar from "@/components/layout/ScrollProgressBar";
-import ContactSection from "@/components/sections/ContactSection";
 
-<ContactSection />
 /* ─────────────────────────────────────────────────────────────────
    FUENTE — Inter optimizada con next/font
 ───────────────────────────────────────────────────────────────── */
