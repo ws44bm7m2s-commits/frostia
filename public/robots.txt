@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://frostai.cl/sitemap.xml
+
+# Disallow admin/api routes
+Disallow: /api/
+Disallow: /_next/

@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────
+   CSS CUSTOM PROPERTIES — Frost AI Design System
+───────────────────────────────────────────────────────────────── */
+:root {
+  /* Paleta principal */
+  --frost-dark:      #0B1120;
+  --frost-darker:    #080E1C;
+  --frost-darkest:   #060C18;
+  --frost-surface:   #0F1929;
+  --frost-blue:      #2563EB;
+  --frost-blue-dark: #1d4ed8;
+  --frost-cyan:      #06B6D4;
+  --frost-gray:      #111827;
+  --frost-light:     #F9FAFB;
+
+  /* Tipografía */
+  --font-inter: 'Inter', 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Timing functions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   BASE RESET & DEFAULTS
+───────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--frost-dark);
+  color: #F9FAFB;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SCROLLBAR CUSTOM (webkit)
+───────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--frost-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.35);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.6);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SELECTION
+───────────────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   FOCUS VISIBLE GLOBAL
+───────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(6, 182, 212, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   GRADIENT TEXT UTILITY
+───────────────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #2563EB, #06B6D4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   GLASS CARD UTILITY
+───────────────────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(15, 25, 41, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SMOOTH SECTION TRANSITION
+   Evita flashes entre secciones de distinto bg
+───────────────────────────────────────────────────────────────── */
+section {
+  position: relative;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   REDUCED MOTION — Respeta preferencias de accesibilidad
+───────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
