@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, Fragment } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ScanSearch, Puzzle, Rocket, ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -113,7 +113,7 @@ function StepCard({ step, index }: { step: (typeof STEPS)[number]; index: number
         className="relative flex flex-col h-full rounded-2xl border border-white/[0.07]
                    bg-[#0F1929]/70 backdrop-blur-sm overflow-hidden
                    transition-colors duration-300 group-hover:border-opacity-60"
-        style={{ "--hover-border": step.border } as React.CSSProperties}
+        style={{ "--hover-border": step.accent } as React.CSSProperties}
       >
         {/* Top accent */}
         <div
@@ -243,16 +243,16 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Steps layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 lg:gap-4 items-start">
-          {STEPS.map((step, i) => (
-            <>
-              <StepCard key={step.number} step={step} index={i} />
-              {i < STEPS.length - 1 && (
-                <ConnectorLine key={`conn-${i}`} accent={step.accent} />
-              )}
-            </>
-          ))}
-        </div>
+         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 lg:gap-4 items-start">
+           {STEPS.map((step, i) => (
+             <Fragment key={step.number}> {/* <-- Cambiado el fragmento vacío por Fragment con key */}
+               <StepCard step={step} index={i} />
+               {i < STEPS.length - 1 && (
+                 <ConnectorLine accent={step.accent} />
+               )}
+             </Fragment>
+           ))}
+         </div>
 
         {/* Bottom CTA */}
         <motion.div
