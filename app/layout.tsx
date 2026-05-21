@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar           from "@/components/layout/Navbar";
@@ -20,7 +20,7 @@ const inter = Inter({
 /* ─────────────────────────────────────────────────────────────────
    VIEWPORT
 ───────────────────────────────────────────────────────────────── */
-export const viewport: Viewport = {
+export const viewport = {
   themeColor: "#0B1120",
   width: "device-width",
   initialScale: 1,
