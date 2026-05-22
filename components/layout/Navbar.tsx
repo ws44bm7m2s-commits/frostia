@@ -145,13 +145,13 @@ export default function Navbar() {
             </nav>
 
             <div className="hidden md:flex items-center gap-3">
-              <motion.a href="#contacto"
-                onClick={(e) => { e.preventDefault(); handleNavClick("#contacto"); }}
+              <motion.a href="#demo-form"
+                onClick={(e) => { e.preventDefault(); handleNavClick("#demo-form"); }}
                 className="text-[13px] font-medium text-white/50 hover:text-white/80 transition-colors duration-200 px-2"
                 whileHover={{ y: -0.5 }}>
                 Iniciar sesión
               </motion.a>
-              <CTAButton onClick={() => handleNavClick("#contacto")} />
+              <CTAButton onClick={() => handleNavClick("#demo-form")} />
             </div>
 
             <motion.button
@@ -203,7 +203,7 @@ export default function Navbar() {
                 <div className="my-3 h-px bg-white/[0.06]" />
                 <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.28 }} className="px-1 pb-1">
-                  <CTAButton onClick={() => handleNavClick("#contacto")} fullWidth />
+                  <CTAButton onClick={() => handleNavClick("#demo-form")} fullWidth />
                 </motion.div>
               </div>
             </motion.div>

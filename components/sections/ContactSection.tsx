@@ -373,7 +373,7 @@ export default function ContactSection() {
 
   return (
     <section
-      id="contacto"
+      id="demo-form"
       ref={sectionRef}
       className="relative w-full overflow-hidden bg-[#080C14] py-24 md:py-32"
     >
