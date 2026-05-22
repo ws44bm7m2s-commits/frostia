@@ -7,6 +7,13 @@ import { ScanSearch, Puzzle, Rocket, ArrowRight, CheckCircle2 } from "lucide-rea
 /* ─────────────────────────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────────────────────────── */
+const scrollToDemo = () => {
+  document.getElementById("demo-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const STEPS = [
   {
     number: "01",
@@ -256,6 +263,7 @@ export default function HowItWorksSection() {
 
         {/* Bottom CTA */}
         <motion.div
+          onClick={scrollToDemo}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

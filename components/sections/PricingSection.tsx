@@ -7,6 +7,13 @@ import { CheckCircle2, ArrowRight, Zap, Building2, Crown } from "lucide-react";
 /* ─────────────────────────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────────────────────────── */
+const scrollToDemo = () => {
+  document.getElementById("demo-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const PLANS = [
   {
     id: "starter",

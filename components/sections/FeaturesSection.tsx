@@ -21,6 +21,12 @@ import {
 /* ─────────────────────────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────────────────────────── */
+const scrollToDemo = () => {
+  document.getElementById("demo-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 const SERVICES = [
   {
     id: "automatizacion",
@@ -374,6 +380,7 @@ function BottomCTA() {
     >
       {/* Primary */}
       <motion.button
+        onClick={scrollToDemo}
         whileHover={{ scale: 1.025, y: -2 }}
         whileTap={{ scale: 0.975 }}
         transition={{ type: "spring", stiffness: 400, damping: 22 }}

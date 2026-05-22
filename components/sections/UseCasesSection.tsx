@@ -18,6 +18,13 @@ import {
 /* ─────────────────────────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────────────────────────── */
+const scrollToDemo = () => {
+  document.getElementById("demo-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const CASES = [
   {
     id: "mineria",
@@ -389,6 +396,7 @@ export default function UseCasesSection() {
 
         {/* Bottom CTA */}
         <motion.div
+          onClick={scrollToDemo}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

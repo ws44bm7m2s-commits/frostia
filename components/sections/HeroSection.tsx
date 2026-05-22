@@ -6,6 +6,13 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "fra
 /* ─────────────────────────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────────────────────────── */
+const scrollToDemo = () => {
+  document.getElementById("demo-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const STATS = [
   { value: 94, suffix: "%", label: "Reducción de procesos manuales" },
   { value: 3.2, suffix: "x", label: "Mayor velocidad operacional" },
@@ -441,6 +448,7 @@ export default function HeroSection() {
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mb-10">
                 {/* Primary CTA */}
                 <motion.button
+                  onClick={scrollToDemo}
                   whileHover={{ scale: 1.025, y: -2 }}
                   whileTap={{ scale: 0.975 }}
                   transition={{ type: "spring", stiffness: 400, damping: 22 }}

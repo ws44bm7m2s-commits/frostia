@@ -8,6 +8,13 @@ import { INTEGRATIONS, INTEGRATION_CATEGORIES, type IntegrationCategory } from "
 /* ─────────────────────────────────────────────────────────────────
    SVG ICONS PER INTEGRATION (monograms/abbrev rendereados en SVG)
 ───────────────────────────────────────────────────────────────── */
+const scrollToDemo = () => {
+  document.getElementById("demo-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 function IntegrationIcon({ name, accent }: { name: string; accent: string }) {
   const abbr = name.replace(/[^A-Z0-9]/g, "").slice(0, 2) || name.slice(0, 2).toUpperCase();
   return (
@@ -271,6 +278,7 @@ export default function IntegrationsSection() {
             </div>
           </div>
           <motion.button
+            onClick={scrollToDemo}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             className="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl
