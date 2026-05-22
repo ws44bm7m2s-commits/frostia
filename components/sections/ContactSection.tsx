@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Button from "@/components/Button"; // adjust path to your Button component
+import Button from "@/components/ui/Button"; // adjust path to your Button component
  
 /* ─────────────────────────────────────────────────────────────────
    CONTACT / DEMO SECTION — FrostIA  (mobile-optimized)
